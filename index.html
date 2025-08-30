@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Model Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(135deg, #e0eaff 0%, #f8f9fa 100%);
+      margin: 0;
+      min-height: 100vh;
+      color: #222;
+      padding-top: 80px; /* Add space for the fixed header */
+    }
+    h1, h2 {
+      text-align: center;
+      margin-top: 32px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #2d3a58;
+    }
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #e0eaff 0%, #f8f9fa 100%);
+      box-shadow: 0 4px 16px rgba(45,58,88,0.08);
+      padding: 20px 0 10px 0;
+      z-index: 999;
+      text-align: center;
+      font-size: 1.15rem;
+    }
+    .fixed-header a.back {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 10px;
+      border-radius: 6px;
+      padding: 6px 14px;
+      background: linear-gradient(90deg, #e0eaff 0%, #c7d2fe 100%);
+      transition: background 0.15s, color 0.15s;
+      box-shadow: 0 1px 4px rgba(45,58,88,0.04);
+      display: inline-block;
+    }
+    .fixed-header a.back:hover {
+      background: linear-gradient(90deg, #2563eb 0%, #1e3a8a 100%);
+      color: #fff;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: 48px auto 0 auto;
+      padding: 0 24px 48px 24px;
+    }
+    .item {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(45,58,88,0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px 3px 3px 3px;
+      transition: transform 0.18s, box-shadow 0.18s;
+      position: relative;
+    }
+    .item:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 40px rgba(45,58,88,0.18);
+    }
+    .item img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 16px rgba(45,58,88,0.10);
+      background: #f3f5fa;
+      transition: box-shadow 0.2s;
+    }
+    .item img:hover {
+      box-shadow: 0 8px 24px rgba(45,58,88,0.16);
+    }
+    .item a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 18px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #e0eaff 0%, #c7d2fe 100%);
+      transition: background 0.15s, color 0.15s;
+      box-shadow: 0 1px 4px rgba(45,58,88,0.04);
+    }
+    .item a:hover {
+      background: linear-gradient(90deg, #2563eb 0%, #1e3a8a 100%);
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding-top: 72px;
+      }
+      .fixed-header {
+        padding: 14px 0 7px 0;
+        font-size: 1rem;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 8px 32px 8px;
+      }
+      h1, h2 {
+        font-size: 1.4rem;
+        margin-top: 5px;
+      }
+      .about-frame {
+        max-width: 700px;
+        margin: 36px auto 0 auto;
+        background: linear-gradient(90deg, #e0eaff 0%, #f8f9fa 100%);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(45,58,88,0.13);
+        padding: 28px 28px 20px 28px;
+        text-align: center;
+        color: #374151;
+      }
+      .about-frame h2 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+        color: #2563eb;
+        font-weight: 700;
+      }
+      .about-frame p {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Fixed Header -->
+  <div class="fixed-header">
+    Click image, meet the 3D model in AR. 
+    <a href="https://usdzar.github.io/3dwebAR/" class="back">&larr; Back to Home</a>
+  </div>
+
+
+
+	
+<!--  <h2>3D Model Gallery - Corporate Mascots</h2>  -->
+
+  <div class="gallery">
+    
+    <div class="item">
+      <a href="model0.html">
+        <img src="images/model0.jpg" alt="Model 1">
+      </a>
+      <a href="model0.html">3D AR View</a>
+    </div>
+    
+    <div class="item">
+      <a href="model1.html">
+        <img src="images/model1.jpg" alt="Model 1">
+      </a>
+      <a href="model1.html">3D AR View</a>
+    </div>
+    
+    <div class="item">
+      <a href="model2.html">
+        <img src="images/model2.jpg" alt="Model 2">
+      </a>
+      <a href="model2.html">3D AR View</a>
+    </div>
+    
+    <!-- Add more items as needed -->
+
+	
+	 <div class="item">
+      <a href="model3.html">
+        <img src="images/model3.jpg" alt="Model 1">
+      </a>
+      <a href="model3.html">3D AR View</a>
+    </div>
+    
+    <div class="item">
+      <a href="model4.html">
+        <img src="images/model4.jpg" alt="Model 1">
+      </a>
+      <a href="model4.html">3D AR View</a>
+    </div>
+    
+    <div class="item">
+      <a href="model5.html">
+        <img src="images/model5.jpg" alt="Model 2">
+      </a>
+      <a href="model5.html">3D AR View</a>
+    </div>
+	
+	 <div class="item">
+      <a href="model6.html">
+        <img src="images/model6.jpg" alt="Model 1">
+      </a>
+      <a href="model6.html">3D AR View</a>
+    </div>
+    
+    <div class="item">
+      <a href="model7.html">
+        <img src="images/model7.jpg" alt="Model 1">
+      </a>
+      <a href="model7.html">3D AR View</a>
+    </div>
+    
+    <div class="item">
+      <a href="model8.html">
+        <img src="images/model8.jpg" alt="Model 2">
+      </a>
+      <a href="model8.html">3D AR View</a>
+    </div>
+
+
+    <div class="item">
+      <a href="model9.html">
+        <img src="images/model9.jpg" alt="Model 2">
+      </a>
+      <a href="model9.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model10.html">
+        <img src="images/model10.jpg" alt="Model 2">
+      </a>
+      <a href="model10.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model11.html">
+        <img src="images/model11.jpg" alt="Model 2">
+      </a>
+      <a href="model11.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model12.html">
+        <img src="images/model12.jpg" alt="Model 2">
+      </a>
+      <a href="model12.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model13.html">
+        <img src="images/model13.jpg" alt="Model 2">
+      </a>
+      <a href="model13.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model14.html">
+        <img src="images/model14.jpg" alt="Model 2">
+      </a>
+      <a href="model14.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model15.html">
+        <img src="images/model15.jpg" alt="Model 2">
+      </a>
+      <a href="model15.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model16.html">
+        <img src="images/model16.jpg" alt="Model 2">
+      </a>
+      <a href="model16.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model17.html">
+        <img src="images/model17.jpg" alt="Model 2">
+      </a>
+      <a href="model17.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model18.html">
+        <img src="images/model18.jpg" alt="Model 2">
+      </a>
+      <a href="model18.html">3D AR View</a>
+    </div>
+
+
+	  
+    <div class="item">
+      <a href="model19.html">
+        <img src="images/model19.jpg" alt="Model 2">
+      </a>
+      <a href="model19.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model20.html">
+        <img src="images/model20.jpg" alt="Model 2">
+      </a>
+      <a href="model20.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model21.html">
+        <img src="images/model21.jpg" alt="Model 2">
+      </a>
+      <a href="model21.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model22.html">
+        <img src="images/model22.jpg" alt="Model 2">
+      </a>
+      <a href="model22.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model23.html">
+        <img src="images/model23.jpg" alt="Model 2">
+      </a>
+      <a href="model23.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model24.html">
+        <img src="images/model24.jpg" alt="Model 2">
+      </a>
+      <a href="model24.html">3D AR View</a>
+    </div>
+
+
+	  
+
+    <div class="item">
+      <a href="model25.html">
+        <img src="images/model25.jpg" alt="Model 2">
+      </a>
+      <a href="model25.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model26.html">
+        <img src="images/model26.jpg" alt="Model 2">
+      </a>
+      <a href="model26.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model27.html">
+        <img src="images/model27.jpg" alt="Model 2">
+      </a>
+      <a href="model27.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model28.html">
+        <img src="images/model28.jpg" alt="Model 2">
+      </a>
+      <a href="model28.html">3D AR View</a>
+    </div>
+
+
+	  
+    <div class="item">
+      <a href="model29.html">
+        <img src="images/model29.jpg" alt="Model 2">
+      </a>
+      <a href="model29.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model30.html">
+        <img src="images/model30.jpg" alt="Model 2">
+      </a>
+      <a href="model30.html">3D AR View</a>
+    </div>
+
+    <div class="item">
+      <a href="model31.html">
+        <img src="images/model31.jpg" alt="Model 2">
+      </a>
+      <a href="model31.html">3D AR View</a>
+    </div>
+	  
+    <div class="item">
+      <a href="model32.html">
+        <img src="images/model32.jpg" alt="Model 2">
+      </a>
+      <a href="model32.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model33.html">
+        <img src="images/model33.jpg" alt="Model 2">
+      </a>
+      <a href="model33.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model34.html">
+        <img src="images/model34.jpg" alt="Model 2">
+      </a>
+      <a href="model34.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model35.html">
+        <img src="images/model35.jpg" alt="Model 2">
+      </a>
+      <a href="model35.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model36.html">
+        <img src="images/model36.jpg" alt="Model 2">
+      </a>
+      <a href="model36.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model37.html">
+        <img src="images/model37.jpg" alt="Model 2">
+      </a>
+      <a href="model37.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model38.html">
+        <img src="images/model38.jpg" alt="Model 2">
+      </a>
+      <a href="model38.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model39.html">
+        <img src="images/model39.jpg" alt="Model 2">
+      </a>
+      <a href="model39.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model40.html">
+        <img src="images/model40.jpg" alt="Model 2">
+      </a>
+      <a href="model40.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model41.html">
+        <img src="images/model41.jpg" alt="Model 2">
+      </a>
+      <a href="model41.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model42.html">
+        <img src="images/model42.jpg" alt="Model 2">
+      </a>
+      <a href="model42.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model43.html">
+        <img src="images/model43.jpg" alt="Model 2">
+      </a>
+      <a href="model43.html">View Model 2 (AR)</a>
+    </div>
+
+   <!-- Add more items as needed 
+	  
+    <div class="item">
+      <a href="model44.html">
+        <img src="images/model44.jpg" alt="Model 2">
+      </a>
+      <a href="model44.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model45.html">
+        <img src="images/model45.jpg" alt="Model 2">
+      </a>
+      <a href="model45.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model46.html">
+        <img src="images/model46.jpg" alt="Model 2">
+      </a>
+      <a href="model46.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model47.html">
+        <img src="images/model47.jpg" alt="Model 2">
+      </a>
+      <a href="model47.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model48.html">
+        <img src="images/model48.jpg" alt="Model 2">
+      </a>
+      <a href="model48.html">View Model 2 (AR)</a>
+    </div>
+	  
+
+    <div class="item">
+      <a href="model49.html">
+        <img src="images/model49.jpg" alt="Model 2">
+      </a>
+      <a href="model49.html">View Model 2 (AR)</a>
+    </div>
+
+    <div class="item">
+      <a href="model50.html">
+        <img src="images/model50.jpg" alt="Model 2">
+      </a>
+      <a href="model50.html">View Model 2 (AR)</a>
+    </div>
+-->
+
+
+
+    
+    
+  </div>
+</body>
+  
+
+</html>

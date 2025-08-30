@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AR View</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      margin-top: 24px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+      padding: 16px 6vw;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    model-viewer {
+      width: 100%;
+      max-width: 100vw;
+      height: 60vh;
+      min-height: 320px;
+      background: #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 8px 2vw;
+        margin-top: 8px;
+      }
+      model-viewer {
+        height: 50vh;
+        min-height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+   <!--  <h2>AR Model</h2>　　-->
+    <model-viewer
+      src="models/model9.glb"
+      ios-src="models/model9.usdz"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      camera-controls
+      shadow-intensity="1"
+      alt="AR 3D model"
+      autoplay
+      exposure="1.2">
+    </model-viewer>
+    <div style="font-size:0.95em;color:#555;">
+      On mobile, Tap the AR button. <br> <br>
+        <a href="index.html" class="back">&larr; Back to Gallery</a>
+    </div>
+  </div>
+  
+
+  
+</body>
+</html>
